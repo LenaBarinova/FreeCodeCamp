@@ -7,6 +7,7 @@ import { Router } from 'react-router';
 import { createLocation, createHistory } from 'history';
 import { hydrate } from 'thundercats';
 import { render$ } from 'thundercats-react';
+import moment from 'moment-timezone';
 
 import { app$ } from '../common/app';
 import historySaga from './history-saga';

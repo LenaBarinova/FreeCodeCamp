@@ -133,7 +133,7 @@ block content
                               tr
                                   td.col-xs-4.hidden-xs
                                       a(href='/challenges/' + removeOldTerms(challenge.name), target='_blank')= removeOldTerms(challenge.name)
-                                  td.col-xs-2.hidden-xs= challenge.completedDate ? moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-2.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-6.hidden-xs
                                       a(href=challenge.solution, target='_blank') View my project
                                   td.col-xs-12.visible-xs
@@ -149,7 +149,7 @@ block content
                           for challenge in algos
                               tr
                                   td.col-xs-6.hidden-xs= removeOldTerms(challenge.name)
-                                  td.col-xs-3.hidden-xs= challenge.completedDate ?moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-3.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-3.hidden-xs
                                     if (challenge.solution)
                                         a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution
@@ -171,7 +171,7 @@ block content
                           for challenge in challenges
                               tr
                                   td.col-xs-6.hidden-xs= removeOldTerms(challenge.name)
-                                  td.col-xs-3.hidden-xs= challenge.completedDate ?moment(challenge.completedDate, 'x').format("MMM DD, YYYY") : 'Not Available'
+                                  td.col-xs-3.hidden-xs= challenge.completedDate ? challenge.completedDate : 'Not Available'
                                   td.col-xs-3.hidden-xs
                                     if (challenge.solution)
                                         a(href='/challenges/' + removeOldTerms(challenge.name) + '?solution=' + encodeURIComponent(encodeFcc(challenge.solution)), target='_blank') View my solution

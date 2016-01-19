@@ -511,9 +511,9 @@ module.exports = function(app) {
       id,
       name,
       challengeType,
-      solution
+      solution,
+      timezone
     } = req.body;
-
     const { alreadyCompleted } = updateUserProgress(
       req.user,
       id,
@@ -526,6 +526,10 @@ module.exports = function(app) {
         verified: true
       }
     );
+
+    if (timezone && (!req.user.timezone || req.user.timezone != timezone)) {
+      req.user.timezone = timezone;
+    }
 
     let user = req.user;
     saveUser(req.user)
